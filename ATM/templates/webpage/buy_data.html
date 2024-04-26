@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Buy ata</title>
+    <style>
+           body {
+            background: skyblue;
+            margin: 0;
+            padding: 0;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        /* This part is for main */
+         main{
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        #mainone {
+            padding: 20px 20px 10px 20px;
+        }
+        #mainone button {
+            padding: 5px;
+        }
+        #mainone button i {
+            font-size: 30px;
+        }
+        #maintwo p{
+            padding: 10px 20px 10px 20px;
+        }
+
+        #headerone select{
+            padding: 10px 60% 10px 0;
+            align-items: center;
+        }
+
+        #headerthree input {
+            padding: 10px 45% 10px 5%;
+        }
+        #submit {
+            text-align: center;
+            padding: 15px 75% 15px 0;
+            margin: 20px ;
+        }
+        .option {
+            padding: 10px 25% 10px 5%;
+        }
+    </style>
+</head>
+<body>
+
+ <main>
+     <div id="mainone">
+         <button><a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a></button>
+     </div>
+     <div id="maintwo">
+         <p>Buy Airtime</p>
+     </div>
+ </main><hr>
+
+ <header>
+
+    <form action="">
+     <div id="headerone">
+         <h3>Network</h3>
+         <select name="Select Network">
+             <option value="">Select Network</option><hr>
+             <option value="mtn">MTN</option><hr>
+             <option value="airtel">AIRTEL</option><hr>
+             <option value="glo">GLO</option><hr>
+             <option value="9mobile">9MOBILE</option><hr>
+           </select>
+     </div>
+
+     <div id="headerone">
+         <h3>Data Plans</h3>
+         <select name="Select Network" class="option">
+             <option value="">Select Data Plans</option><hr>
+             <option value="500mb">MTN SME 500 MB for 30 DAYS</option><hr>
+             <option value="1gb">MTN SME 1.0 GB for 30 DAYS</option><hr>
+             <option value="2gb">MTN SME 2.0 GB for 30 DAYS</option><hr>
+             <option value="3gb">MTN SME 3.0 GB for 30 DAYS</option><hr>
+             <option value="5gb">MTN SME 5.0 GB for 30 DAYS</option><hr>
+             <option value="10gb">MTN SME 10.0 GB for 30 DAYS</option><hr>
+             </select>
+     </div>
+
+     <div id="headerthree">
+         <h3>Phone Number</h3>
+         <input type="number" name="number" id="">
+     </div>
+
+     <div id="headerthree">
+         <h3>Amount To Pay</h3>
+         <input type="number" name="amount" id="">
+     </div>
+     <input type="submit" placeholder="submit" id="submit">
+    </form>
+
+    <div class="news-container">
+        <div class="news-headline">
+            <p>
+              This is Tordi Data site, were data are sold for available prices 
+              and are very cheap. all news will be passed on this platform and on our 
+              whatsapp and telegram channel. please join our channel to get more info.
+            </p>
+        </div>
+    </div>
+
+     <style>
+         /* form {
+             text-align: initial;
+         }
+         select {
+             padding: 10px 80px 10px 0;
+             text-align: left;
+             font-size: 10px;
+             border-radius: 10px;
+         }
+         #headerone select {
+             padding: 10 200px 10px 0px;
+             text-align: left;
+         }
+         input {
+             padding: 10px 120px 10px 0;
+             border-radius: 10px;
+             border: none;
+         }
+         #submit {
+             text-align: center;
+             margin: 10px;
+             padding-left: 80px;
+         } */
+         
+     </style>
+ </header>
+</body>
+</html>
+
+
+<style>
+    .news-container {
+      position: fixed;
+      bottom: 0;
+      background: black;
+      border-radius: 0px;
+      color: white;
+      width: 100%;
+      overflow: hidden;
+      z-index: 999; /* Ensure it stays above other content */
+  }
+  
+  .news-headline {
+      white-space: nowrap;
+      animation: marquee 20s linear infinite; /* Adjust duration and timing function as needed */
+      display: inline-block;
+  }
+  
+  @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+  }
+  </style>

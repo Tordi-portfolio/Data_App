@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tordi Data</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+
+    body {
+      background: skyblue;
+      margin: 0;
+      padding: 0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    /* This part is for the up part */
+    #up {
+      display: flex;
+      justify-content: space-between;
+    }
+    #upname h3 {
+      font-size: 20px;
+      padding-left: 30px;
+    }
+    #up #upmenu ul {
+      display: flex;
+      justify-content: space-between;
+    }
+    #up #upmenu ul li {
+      list-style: none;
+      padding-right: 30px;
+    }
+
+    /* This part is for the header */
+    header {
+      background: navy;
+      color: white;
+      border-radius: 10px;
+    }
+    #headeroneone {
+      display: flex;
+      justify-content: space-between;
+    }
+    #headeroneoneone {
+      padding: 0 10px 0 10px;
+    }
+    #headeroneoneone p {
+      margin: 0;
+      padding: 5px;
+    }
+    #headeroneonetwo p {
+      margin: 0;
+    }
+    .acount_number {
+      padding: 5px;
+    }
+
+    #headertwo {
+      padding: 30px;
+    }
+    #headertwo button {
+      background: black;
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+    }
+    #headertwo button a {
+      text-decoration: none;
+      color: white;
+    }
+
+    /* This part is for the main */
+    .mainone {
+      background: white;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    #mainone {
+      padding: 20px;
+    }
+    #maintwo {
+      display: flex;
+      justify-content: space-between;
+    }
+    .main button{
+      margin: 0;
+    }
+    .main p {
+      margin: 0;
+    }
+    .main {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div id="up">
+    <div id="upname">
+      <h3>TORDIDATA</h3>
+      {% if user.is_authenticated %}
+      {% else %}
+      Not A User
+      {% endif %}
+      <div style="padding-left: 30px;" class="card-holder-name">{{user.first_name}} {{user.last_name}}</div>
+    </div>
+    <div id="upmenu">
+      <ul>
+        {% if user.is_authenticated %}
+        <li><a href="profile"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+        <li><a href="sign_out"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>   
+        {% else %}
+        <li><a href="signup"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>   
+        <li><a href="login"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>   
+        {% endif %}       
+      </ul>
+    </div>
+  </div>
+
+  <header>
+
+    <div id="headerone">
+      <div id="headeroneone">
+        <div id="headeroneoneone">
+          <h4>
+            <p>Total Balance</p>
+            <p>N26.86</p>
+          </h4>
+        </div>
+        <div id="headeroneonetwo">
+          <div id="headeroneonetwoone" class="acount_number">
+            <p>Monipoint MFB</p>
+            <p>2132831255</p>
+          </div>
+          <div id="headeroneonetwotwo" class="acount_number">
+            <p>Wema Bank</p>
+            <p>2132831255</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="headertwo">
+      <button><a href="fund_account">Fund Wallet</a></button>
+    </div>
+  </header>
+
+
+
+  <main>
+
+    <div class="mainone">
+      <div id="mainone">
+        <p>Quick Actions</p>
+      </div>
+      <div id="maintwo">
+        <div id="maintwoone" class="main">
+          <button class="button"><a href="fund_account"><i class="fa fa-plus" aria-hidden="true"></i></a></button>
+          <p>Fund</p>
+        </div>
+        <div id="maintwotwo" class="main">
+          <button class="button"><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
+          <p>Orders</p>
+        </div>
+        <div id="maintwothree" class="main">
+          <button class="button"><a href="contact"><i class="fa fa-address-book" aria-hidden="true"></i></i></a></button>
+          <p>Contact</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="mainthree">
+      <div id="mainthreeone">
+        <p>Our Services</p>
+      </div>
+      <div id="mainthreetwo">
+        <div id="mainthreetwoone" class="head">
+          <button class="button"><a href="buy_airtime"><i class="fa fa-mobile" aria-hidden="true"></i></a></button>
+          <p>Buy Airtime</p>
+        </div>
+        <div id="mainthreetwotwo" class="head">
+          <button class="button"><a href="buy_data"><i class="fa fa-globe" aria-hidden="true"></i></a></button>
+          <p>Buy Data</p>
+        </div>
+        <div id="mainthreetwothraa" class="head">
+          <button class="button"><a href=""><i class="fa fa-laptop" aria-hidden="true"></i></a></button>
+          <p>Cable</p>
+        </div>
+        <div id="mainthreetwofour" class="head">
+          <button class="button"><a href=""><i class="fa fa-truck" aria-hidden="true"></i></a></button>
+          <p>Electricity</p>
+        </div>
+        <div id="mainthreetwofive" class="head">
+          <button class="button"><a href=""><i class="fa fa-credit-card" aria-hidden="true"></i></a></button>
+          <p>Data Card</p>
+        </div>
+        <div id="mainthreetwosix" class="head">
+          <button class="button"><a href=""><i class="fa fa-credit-card" aria-hidden="true"></i></a></button>
+          <p>Payments</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="mainfour">
+      <div id="mainfourone">
+        <a href="#">
+          <p><i class="fa fa-home" aria-hidden="true"></i></p>
+          <p>Home</p>
+        </a>
+      </div>
+      <div id="mainfourtwo">
+        <a href="">
+          <p><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+          <p>Buy Data</p>
+        </a>
+      </div>
+      <div id="mainfourthree">
+        <a href="fund_wallet">
+          <p><i class="fa fa-plus" aria-hidden="true"></i></p>
+          <p>Fund</p>
+        </a>
+      </div>
+      <div id="mainfourfour">
+        <a href="">
+          <p><i class="fa fa-phone" aria-hidden="true"></i></p>
+          <p>Airtime</p>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <style>
+    #mainthree {
+      background: white;
+      margin: 10px;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    #mainthreetwo {
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+    }
+    .button {
+      padding: 10px;
+      border-radius: 10px;
+      margin: 0;
+    }
+    .head {
+      padding: 10px;
+    }
+    .head p {
+      margin: 0;
+    }
+    .button:hover {
+      background: black;
+      color: white;
+    }
+    .button i {
+      font-size: 25px;
+    }
+
+    /* This is for mainfour */
+    #mainfour {
+      padding-bottom: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      justify-content: space-between;
+      background: white;
+    }
+    #mainfour a {
+      text-decoration: none;
+    }
+  </style>
+
+
+  <footer></footer>
+
+  <div class="news-container">
+    <div class="news-headline">
+        <p>
+          This is Tordi Data site, were data are sold for available prices 
+          and are very cheap. all news will be passed on this platform and on our 
+          whatsapp and telegram channel. please join our channel to get more info.
+        </p>
+    </div>
+  </div>
+
+<style>
+  .news-container {
+    position: fixed;
+    bottom: 0;
+    background: black;
+    border-radius: 0px;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    z-index: 999; /* Ensure it stays above other content */
+}
+
+.news-headline {
+    white-space: nowrap;
+    animation: marquee 20s linear infinite; /* Adjust duration and timing function as needed */
+    display: inline-block;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+</style>
+
+</body>
+</html>

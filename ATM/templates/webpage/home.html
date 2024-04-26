@@ -1,0 +1,238 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM BANK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <style>
+        #card-front-top {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 5%;
+        }
+        #name-date {
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .first-four {
+            padding-left: 39px;
+            font-size: 15px;
+        }
+        .first-back p {
+            background-color: black;
+            padding: 10px;
+            margin-bottom: 0;
+        }
+        .signature-strip p {
+            padding-top: 10px;
+            margin: 5px;
+            background: white;
+            color: black;
+            border-radius: 5px;
+            text-align: right;
+            padding-right: 29px;
+        }
+        .auto-text {
+            font-size: 15px;
+        }
+        .cvv-number {
+            color: white;
+            background: black;
+            padding: 5px 10px;
+        }
+        .atm-back-text {
+            font-size: 10px;
+            text-align: center;
+        }
+        .auto-text {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0cap0;
+        }
+        .auto-text h5 {
+            margin: 0;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .credit-card {
+  /* ... existing styles ... */
+  position: relative;  /* Allows positioning the back element */
+  background: yellow;
+}
+
+.card-front {
+  /* ... existing styles ... */
+  backface-visibility: hidden; /* Hides front when flipped */
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  transform: rotateX(180deg);  /* Rotates the back element 180deg */
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;  /* Hides back when not flipped */
+  transition: transform 0.5s ease-in-out;
+}
+
+.credit-card:hover .card-back {
+  transform: rotateY(0deg);  /* Flips the card on hover */
+}
+
+.cvv {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.cvv-number {
+  font-weight: bold;
+}
+
+
+
+.credit-card {
+  width: 350px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.card-front {
+  width: 100%;
+  height: 100%;
+  background-image: url("card_background.png");  background-size: cover;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-logo {
+  width: 80px;
+  height: 40px;
+  align-self: flex-start;
+}
+
+.chip {
+  width: 40%;
+  height: 20px;
+  border-radius: 2px;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.chip img {
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.card-number {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.card-holder-name {
+  color: #333;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  text-align: left;
+  padding-top: 3px;
+}
+
+.card-validity {
+  color: #888;
+  font-size: 12px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.month, .year {
+  font-weight: bold;
+}
+
+    </style>
+ {% if user.is_authenticated %}
+ <div class="card-holder-name">{{user.username}}</div>
+ {% else %}
+ No Name
+ {% endif %}
+    <div id="maintwo">
+        <div class="credit-card" style="background: red; border-radius: 10px;">
+            <div class="card-front">
+              <div id="card-front-top">
+                <span>Debit</span>
+                <span><b>Tordi Bank</b></span>
+              </div>
+              {% for item in context %}
+              <div class="chip"><img src="../../static/img/simcard.PNG" alt=""></div>
+              <div id="card-number">                
+                <div class="card-number">{{item.card_number}}</div>
+                <div class="first-four"></div>
+              </div>
+              <div id="name-date">
+                {% if user.is_authenticated %}
+                <div class="card-holder-name">{{user.first_name}} {{user.last_name}}</div>
+                {% else %}
+                No Name
+                {% endif %}
+                <div class="card-validity">EXP: <span class="month"></span>/<span class="year">{{item.exp_date}}</span></div>
+              </div>
+              {% endfor %}
+            </div>
+            <div class="card-back" style="background: red; border-radius: 10px;">
+                <div class="first-back">
+                    <p>hi</p>
+                </div>
+              <div class="signature-strip">
+                <div class="auto-text">
+                    <h5>Authorise Signature</h5>
+                    <h5>Not Valid Unless Signed</h5>
+                </div>
+                <p><i>125</i></p>
+              </div>
+              <div class="atm-back-text">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Tempore delectus iure ducimus officiis voluptatum ad eum nam, 
+                    similique non sequi eveniet quidem commodi ab accusamus excepturi, 
+                    blanditiis necessitatibus cupiditate ea.
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Tempore delectus iure ducimus officiis voluptatum ad eum nam, 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <a href="login">login here</a>
+    <a href="signup">signup</a>
+</body>
+</html>

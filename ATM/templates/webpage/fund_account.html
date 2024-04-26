@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund Wallet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            background: skyblue;
+        }
+        header {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #headerthree {
+            text-align: right;
+            padding: 10px;
+        }
+        .acoount_details {
+            padding: 10px;
+        }
+        #headerthree p {
+            margin: 0;
+        }
+        #headerfive {
+            padding: 10px;
+        }
+        #headerfive a {
+            text-decoration: none;
+            color: black;
+        }
+        #headerfive button {
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+        }
+        #headerfive button:hover {
+            background: black;
+            color: white;
+        }
+
+
+        main{
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        #mainone {
+            padding: 20px 20px 10px 20px;
+        }
+        #mainone button {
+            padding: 5px;
+        }
+        #mainone button i {
+            font-size: 30px;
+        }
+        #maintwo p{
+            padding: 10px 20px 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="mainone">
+            <button><a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a></button>
+        </div>
+        <div id="maintwo">
+            <p>Transfer</p>
+        </div>
+    </main>
+    <header>
+        <div id="headeroneone">
+            <h3>This automatic funding with 1.08% charges</h3>
+        </div>
+        <div id="headeroneTow">
+            <p>To fund your wallet send the money to on of the following accounts:</p>
+        </div>
+        <div id="headerthree">
+            <div id="headerthreeone" class="acoount_details">
+                <p>Moniepoint MFB</p>
+                <p>2132831255<i class="fa fa-files-o" aria-hidden="true"></i></p>
+            </div>
+            <div id="headerthreetwo" class="acoount_details">
+                <p>Wema Bank</p>
+                <p>2132831255 <i class="fa fa-files-o" aria-hidden="true"></i></p>
+            </div>
+        </div>
+        <div id="headerfour">
+            <h3>Account Name: TORDIDATA-{{user.first_name}} {{user.last_name}}</h3>
+            <p>After you have successfully made this payment, the money will automatically fund into your wallet. click the button below for payment comfirmatiom.</p>
+        </div>
+        <div id="headerfive">
+            <a href="https://wa.me/07032174479"><button>CONFIRM</button></a>
+        </div>
+    </header>
+</body>
+</html>
